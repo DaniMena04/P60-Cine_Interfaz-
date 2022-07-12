@@ -16,17 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    boleto.cpp \
     cartelera.cpp \
     main.cpp \
     principal.cpp \
     usuario.cpp
 
 HEADERS += \
+    boleto.h \
     cartelera.h \
     principal.h \
     usuario.h
 
 FORMS += \
+    boleto.ui \
     cartelera.ui \
     principal.ui \
     usuario.ui
