@@ -16,14 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cartelera.cpp \
     main.cpp \
-    principal.cpp
+    principal.cpp \
+    usuario.cpp
 
 HEADERS += \
-    principal.h
+    cartelera.h \
+    principal.h \
+    usuario.h
 
 FORMS += \
-    principal.ui
+    cartelera.ui \
+    principal.ui \
+    usuario.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

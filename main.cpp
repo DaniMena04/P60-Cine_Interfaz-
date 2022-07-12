@@ -3,9 +3,11 @@
 #include <QApplication>
 
 /*
- *Alexis Lomas
- */
-// Colaborando con Alexis y Daniel. Steven Calapaqui
+ * Alexis
+ * Colaborando con Alexis y Daniel. Steven Calapaqui
+ * Daniel Mena :3
+*/
+
 
 int main(int argc, char *argv[])
 {
