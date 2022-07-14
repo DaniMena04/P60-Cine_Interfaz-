@@ -8,6 +8,8 @@
 #include <QTextStream>
 #include <QMessageBox>
 
+#include "codigo.h"
+
 namespace Ui {
 class Usuario;
 }
@@ -21,9 +23,15 @@ public:
     Usuario(QString m_contra);
     ~Usuario();
 
+private slots:
+
+    void on_btnCancelar_clicked();
+
+    void on_btnAceptar_released();
+
 private:
     Ui::Usuario *ui;
-    QString m_contra;
+    QList <Codigo*> m_password;
 };
 
 #endif // USUARIO_H

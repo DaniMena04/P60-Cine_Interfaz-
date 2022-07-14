@@ -18,6 +18,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     boleto.cpp \
     cartelera.cpp \
+    codigo.cpp \
+    edcartelera.cpp \
     main.cpp \
     principal.cpp \
     usuario.cpp
@@ -25,12 +27,14 @@ SOURCES += \
 HEADERS += \
     boleto.h \
     cartelera.h \
+    codigo.h \
+    edcartelera.h \
     principal.h \
     usuario.h
 
 FORMS += \
     boleto.ui \
-    cartelera.ui \
+    edcartelera.ui \
     principal.ui \
     usuario.ui
 

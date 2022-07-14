@@ -86,7 +86,7 @@
      <string>Hora :</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="outFecha">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -99,7 +99,7 @@
      <string>12 de Julio del 2022</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="outPelicula">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -131,7 +131,7 @@
      <string>Sala :</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="outSala">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -163,7 +163,7 @@
      <string>Asientos :</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_9">
+   <widget class="QLabel" name="outFila">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -195,7 +195,7 @@
      <string>Fecha :</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_11">
+   <widget class="QLabel" name="outHora">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -227,7 +227,7 @@
      <string>Fila :</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_13">
+   <widget class="QLabel" name="outAsientos">
     <property name="geometry">
      <rect>
       <x>280</x>
