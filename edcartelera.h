@@ -23,7 +23,7 @@ public:
     ~edCartelera();
 
 private slots:
-    void on_btnAceptar_clicked();
+    void on_btnGuardar_clicked();
 
     void on_btnCancelar_clicked();
 

@@ -13,8 +13,8 @@ edCartelera::edCartelera(QWidget *parent) :
 
     titulos << "Pelicula" << "Duracion" << "Hora 1" << "Hora 2" << "Hora 3" << "Hora 4" << "Sala 1" << "Sala 2" << "Sala 3" << "Sala 4";
     ui->outCarteleras->setColumnCount(10);
-    ui->outCarteleras->setColumnWidth(0,300);
-    ui->outCarteleras->setColumnWidth(1,300);
+    ui->outCarteleras->setColumnWidth(0,200);
+    ui->outCarteleras->setColumnWidth(1,90);
     ui->outCarteleras->setColumnWidth(2,100);
     ui->outCarteleras->setColumnWidth(3,100);
     ui->outCarteleras->setColumnWidth(4,100);
@@ -25,8 +25,6 @@ edCartelera::edCartelera(QWidget *parent) :
     ui->outCarteleras->setColumnWidth(9,100);
 
     ui->outCarteleras->setHorizontalHeaderLabels(titulos);
-
-    ui->btnAceptar->setEnabled(false);
 
     QFile archivo;
     QTextStream io;
@@ -41,7 +39,7 @@ edCartelera::edCartelera(QWidget *parent) :
         io.setDevice(&archivo);
         while(!io.atEnd()){
             QString linea =io.readLine();
-           // qDebug() << linea;
+            // qDebug() << linea;
             QStringList datos = linea.split(";");
             int i=0;
             Pelicula = datos.at(0);
@@ -88,9 +86,46 @@ edCartelera::~edCartelera()
     delete ui;
 }
 
-void edCartelera::on_btnAceptar_clicked()
+void edCartelera::on_btnGuardar_clicked()
 {
+    QTextStream io;
+    QDir actual = QDir::current();
+    QString nombreArchivo = actual.absolutePath() + "/cartelera.csv";
 
+    QFile archivo;
+
+    archivo.setFileName(nombreArchivo);
+    archivo.open(QFile::WriteOnly | QFile::Truncate);
+
+    if(!archivo.isOpen()){
+        QMessageBox::critical(this,"Aviso","No se pudo abrir el documento de carteleras");
+        return;
+    };
+
+    io.setDevice(&archivo);
+
+    int fila = ui->outCarteleras->rowCount();
+    int columna = ui->outCarteleras->columnCount();
+
+    QString celda;
+
+    for(int i=0; i<fila; i++){
+        for(int j=0; j<columna; j++){
+            if(j != (columna-1)){
+                celda = ui->outCarteleras->item(i,j)->text() + ";";
+            }else{
+                celda = ui->outCarteleras->item(i,j)->text();
+            }
+
+            io << celda;
+        }
+
+        io << "\n";
+    }
+
+    QMessageBox::information(this,"Aviso","Archivo guardado");
+    archivo.flush();
+    archivo.close();
 }
 
 void edCartelera::on_btnCancelar_clicked()
