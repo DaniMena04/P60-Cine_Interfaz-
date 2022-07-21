@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    asientos.cpp \
     boleto.cpp \
     cartelera.cpp \
     codigo.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
     usuario.cpp
 
 HEADERS += \
+    asientos.h \
     boleto.h \
     cartelera.h \
     codigo.h \
@@ -33,6 +35,7 @@ HEADERS += \
     usuario.h
 
 FORMS += \
+    asientos.ui \
     boleto.ui \
     edcartelera.ui \
     principal.ui \
@@ -42,3 +45,8 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resoruces.qrc
+
+DISTFILES +=
