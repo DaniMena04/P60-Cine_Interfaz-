@@ -53,9 +53,7 @@ edCartelera::edCartelera(QWidget *parent) :
             Sala3 = datos.at(8);
             Sala4 = datos.at(9);
 
-            i++;
-
-            qDebug() << Pelicula;
+            // qDebug() << Pelicula;
 
             m_cartelera.append(new Cartelera(Pelicula, Duracion, Hora1, Hora2, Hora3, Hora4, Sala1, Sala2, Sala3, Sala4));
 
@@ -73,7 +71,7 @@ edCartelera::edCartelera(QWidget *parent) :
             ui->outCarteleras->setItem(fila,9,new QTableWidgetItem(Sala4));
         }
 
-        qDebug() << m_cartelera;
+        // qDebug() << m_cartelera;
 
         archivo.close();
     }else{

@@ -2,8 +2,10 @@
 #define PRINCIPAL_H
 
 #include <QMainWindow>
+#include <QDebug>
 
-#include "asientos.h"
+#include "detalle.h"
+#include "cartelera.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Principal; }
@@ -16,6 +18,15 @@ class Principal : public QMainWindow
 public:
     Principal(QWidget *parent = nullptr);
     ~Principal();
+
+    QString Pelicula[4];
+    QString Duracion[4];
+    QString Hora_1[4];
+    QString Hora_2[4];
+    QString Hora_3[4];
+    QString Hora_4[4];
+
+    int indice;
 
 private slots:
     void on_actionCartelera_triggered();

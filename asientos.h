@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QDebug>
 
+#include "detalle.h"
+
 namespace Ui {
 class Asientos;
 }
@@ -51,8 +53,11 @@ private slots:
 
     void on_D4_stateChanged(int arg1);
 
+    void validacion();
+
 private:
     Ui::Asientos *ui;
+    int i, m_limite;
 };
 
 #endif // ASIENTOS_H
