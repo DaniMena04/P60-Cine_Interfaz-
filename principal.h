@@ -21,10 +21,16 @@ public:
 
     QString Pelicula[4];
     QString Duracion[4];
+
     QString Hora_1[4];
     QString Hora_2[4];
     QString Hora_3[4];
     QString Hora_4[4];
+
+    QString Sala_1[4];
+    QString Sala_2[4];
+    QString Sala_3[4];
+    QString Sala_4[4];
 
     int indice;
 

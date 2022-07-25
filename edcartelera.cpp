@@ -49,9 +49,6 @@ edCartelera::edCartelera(QWidget *parent) :
             Hora3 = datos.at(4);
             Hora4 = datos.at(5);
             Sala1 = datos.at(6);
-            Sala2 = datos.at(7);
-            Sala3 = datos.at(8);
-            Sala4 = datos.at(9);
 
             // qDebug() << Pelicula;
 

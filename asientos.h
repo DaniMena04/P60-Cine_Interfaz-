@@ -5,6 +5,7 @@
 #include <QDebug>
 
 #include "detalle.h"
+#include "boleto.h"
 
 namespace Ui {
 class Asientos;
@@ -16,9 +17,12 @@ class Asientos : public QDialog
 
 public:
     explicit Asientos(QWidget *parent = nullptr);
+
     ~Asientos();
 
-    void maAsi();
+    QString m_asientosEscojidos[16];
+    int m_limite;
+
 private slots:
 
     void on_A1_stateChanged(int arg1);
@@ -55,9 +59,13 @@ private slots:
 
     void validacion();
 
+    void on_btnComprar_clicked();
+
+    void on_btnCancelar_clicked();
+
 private:
     Ui::Asientos *ui;
-    int i, m_limite;
+    int i;
 };
 
 #endif // ASIENTOS_H

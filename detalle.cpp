@@ -7,14 +7,15 @@ Detalle::Detalle(QWidget *parent) :
 {
     ui->setupUi(this);
     Principal *p;
-
     ui->outPelicula->setText(p->Pelicula[p->indice-1]);
     ui->outDuracion->setText(p->Duracion[p->indice-1]);
     ui->outHora_1->setText(p->Hora_1[p->indice-1]);
     ui->outHora_2->setText(p->Hora_2[p->indice-1]);
     ui->outHora_3->setText(p->Hora_3[p->indice-1]);
     ui->outHora_4->setText(p->Hora_4[p->indice-1]);
-    update();
+
+    setPelicula(ui->outPelicula->text());
+    qDebug() << Pelicula();
 }
 
 Detalle::~Detalle()
@@ -29,6 +30,10 @@ void Detalle::on_outHora_1_stateChanged(int arg1)
         ui->outHora_2->setEnabled(false);
         ui->outHora_3->setEnabled(false);
         ui->outHora_4->setEnabled(false);
+
+        setHora(ui->outHora_1->text());
+        qDebug() << Hora();
+
     }else{
         ui->outHora_2->setEnabled(true);
         ui->outHora_3->setEnabled(true);
@@ -43,6 +48,9 @@ void Detalle::on_outHora_2_stateChanged(int arg1)
         ui->outHora_1->setEnabled(false);
         ui->outHora_3->setEnabled(false);
         ui->outHora_4->setEnabled(false);
+
+        setHora(ui->outHora_2->text());
+        qDebug() << Hora();
     }else{
         ui->outHora_1->setEnabled(true);
         ui->outHora_3->setEnabled(true);
@@ -57,6 +65,9 @@ void Detalle::on_outHora_3_stateChanged(int arg1)
         ui->outHora_1->setEnabled(false);
         ui->outHora_2->setEnabled(false);
         ui->outHora_4->setEnabled(false);
+
+        setHora(ui->outHora_3->text());
+        qDebug() << Hora();
     }else{
         ui->outHora_1->setEnabled(true);
         ui->outHora_2->setEnabled(true);
@@ -71,6 +82,9 @@ void Detalle::on_outHora_4_stateChanged(int arg1)
         ui->outHora_1->setEnabled(false);
         ui->outHora_2->setEnabled(false);
         ui->outHora_3->setEnabled(false);
+
+        setHora(ui->outHora_4->text());
+        qDebug() << Hora();
     }else{
         ui->outHora_1->setEnabled(true);
         ui->outHora_2->setEnabled(true);
@@ -96,4 +110,25 @@ void Detalle::on_spinBox_valueChanged(int arg1)
 {
     this->indice = arg1;
 }
+
+const QString &Detalle::Pelicula() const
+{
+    return m_Pelicula;
+}
+
+void Detalle::setPelicula(const QString &newPelicula)
+{
+    m_Pelicula = newPelicula;
+}
+
+const QString &Detalle::Hora() const
+{
+    return m_Hora;
+}
+
+void Detalle::setHora(const QString &newHora)
+{
+    m_Hora = newHora;
+}
+
 

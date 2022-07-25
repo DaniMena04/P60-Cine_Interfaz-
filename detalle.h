@@ -6,6 +6,7 @@
 
 #include "principal.h"
 #include "asientos.h"
+#include "boleto.h"
 
 namespace Ui {
 class Detalle;
@@ -20,7 +21,15 @@ public:
 
     int indice;
 
+
+
     ~Detalle();
+
+    const QString &Hora() const;
+    void setHora(const QString &newHora);
+
+    const QString &Pelicula() const;
+    void setPelicula(const QString &newPelicula);
 
 private slots:
     void on_outHora_1_stateChanged(int arg1);
@@ -39,6 +48,8 @@ private slots:
 
 private:
     Ui::Detalle *ui;
+    QString m_Hora;
+    QString m_Pelicula;
 };
 
 #endif // DETALLE_H
