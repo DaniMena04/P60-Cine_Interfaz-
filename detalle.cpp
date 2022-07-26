@@ -7,6 +7,7 @@ Detalle::Detalle(QWidget *parent) :
 {
     ui->setupUi(this);
     Principal *p;
+//    Boleto *b;
     ui->outPelicula->setText(p->Pelicula[p->indice-1]);
     ui->outDuracion->setText(p->Duracion[p->indice-1]);
     ui->outHora_1->setText(p->Hora_1[p->indice-1]);
@@ -66,13 +67,15 @@ void Detalle::on_outHora_3_stateChanged(int arg1)
         ui->outHora_2->setEnabled(false);
         ui->outHora_4->setEnabled(false);
 
-        setHora(ui->outHora_3->text());
-        qDebug() << Hora();
+
     }else{
         ui->outHora_1->setEnabled(true);
         ui->outHora_2->setEnabled(true);
         ui->outHora_4->setEnabled(true);
     }
+
+    setHora(ui->outHora_3->text());
+    qDebug() << Hora();
 }
 
 
@@ -83,13 +86,15 @@ void Detalle::on_outHora_4_stateChanged(int arg1)
         ui->outHora_2->setEnabled(false);
         ui->outHora_3->setEnabled(false);
 
-        setHora(ui->outHora_4->text());
-        qDebug() << Hora();
+
     }else{
         ui->outHora_1->setEnabled(true);
         ui->outHora_2->setEnabled(true);
         ui->outHora_3->setEnabled(true);
     }
+
+    setHora(ui->outHora_4->text());
+    qDebug() << Hora();
 }
 
 

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Principal</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resoruces.qrc">
+    <normaloff>:/Resources/Imagenes/cine.png</normaloff>:/Resources/Imagenes/cine.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
@@ -278,6 +282,8 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resoruces.qrc"/>
+ </resources>
  <connections/>
 </ui>

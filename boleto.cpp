@@ -7,12 +7,44 @@ Boleto::Boleto(QWidget *parent) :
 {
     ui->setupUi(this);
 
-   Detalle *d;
-   qDebug() << d->Pelicula();
-   qDebug() << d->Hora();
+//    QFile archivo;
+//    QTextStream io;
 
-    ui->outPelicula->setText(d->Pelicula());
-    ui->outHora->setText(d->Hora());
+//    QDir actual = QDir::current();
+//    QString nombreArchivo = actual.absolutePath() + "/cartelera.csv";
+//    archivo.setFileName(nombreArchivo);
+
+//    if(archivo.open(QIODevice::ReadOnly | QIODevice::Text)){
+//        io.setDevice(&archivo);
+//        int i=0;
+//        indice = 0;
+//        while(!io.atEnd()){
+//            QString linea =io.readLine();
+//            // qDebug() << linea;
+//            QStringList datos = linea.split(";");
+//            Pelicula[i] = datos.at(0);
+//            Duracion[i] = datos.at(1);
+
+//            Hora_1[i] = datos.at(2);
+//            Hora_2[i] = datos.at(3);
+//            Hora_3[i] = datos.at(4);
+//            Hora_4[i] = datos.at(5);
+
+//            Sala_1[i] = datos.at(6);
+//            Sala_2[i] = datos.at(7);
+//            Sala_3[i] = datos.at(8);
+//            Sala_4[i] = datos.at(9);
+
+//            i++;
+//        }
+
+//    //   Detalle *d;
+//    Principal *p;
+//    qDebug() << p->Pelicula[0];
+//    //   qDebug() << d->Hora();
+
+//    ui->outPelicula->setText(p->Pelicula[0]);
+//    ui->outHora->setText("d->Hora()");
 
 }
 

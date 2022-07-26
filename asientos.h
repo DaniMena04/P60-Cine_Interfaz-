@@ -5,7 +5,7 @@
 #include <QDebug>
 
 #include "detalle.h"
-#include "boleto.h"
+
 
 namespace Ui {
 class Asientos;

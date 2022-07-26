@@ -6,6 +6,7 @@
 
 #include "detalle.h"
 #include "cartelera.h"
+#include "acerca_de.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Principal; }
@@ -44,6 +45,10 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_pushButton_4_clicked();
+
+    void on_actionSalir_triggered();
+
+    void on_actionAcerca_de_triggered();
 
 private:
     Ui::Principal *ui;

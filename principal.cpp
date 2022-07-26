@@ -40,6 +40,8 @@ Principal::Principal(QWidget *parent)
             i++;
         }
 
+        qDebug() << Pelicula[0];
+
         ui->textEdit->setText(Pelicula[0]);
         ui->textEdit_2->setText(Pelicula[1]);
         ui->textEdit_3->setText(Pelicula[2]);
@@ -93,4 +95,17 @@ void Principal::on_pushButton_4_clicked()
     d->exec();
 }
 
+
+
+void Principal::on_actionSalir_triggered()
+{
+    close();
+}
+
+
+void Principal::on_actionAcerca_de_triggered()
+{
+   Acerca_de *dialog = new Acerca_de(this);
+   dialog->exec();
+}
 

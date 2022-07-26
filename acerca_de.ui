@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Acerca_de</class>
+ <widget class="QDialog" name="Acerca_de">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>707</width>
+    <height>362</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="outTitulo">
+        <property name="font">
+         <font>
+          <family>Franklin Gothic Heavy</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; font-style:italic;&quot;&gt;Cine&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="outVersion">
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>v 0.3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>114</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="Descripcion">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700; font-style:italic;&quot;&gt;Proyecto - Cine&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Autores&lt;/span&gt;:&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; Daniel Mauricio Mena Estrella, Alexis Sebastian Lomas Mites y Steven Mateo Calapaqui Rodiguez&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&amp;lt;&lt;a href=&quot;mailto:dmenae@est.ups.edu.ec&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;dmenae@est.ups.edu.ec&lt;/span&gt;&lt;/a&gt;&amp;gt; &amp;lt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;alomasm@est.ups.edu.ec&lt;/span&gt;&amp;gt; &amp;lt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;scalapaquir@est.ups.edu.ec&lt;/span&gt;&amp;gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Universidad Politecnica Salesiana &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Carrera de computacion&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700; font-style:italic; text-decoration: underline;&quot;&gt;Imagenes utilizadas fueron sacadas de:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;&amp;lt;a href=&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;Cine iconos creados por Freepik - Flaticon&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;-- Todos los derechos reservados &lt;span style=&quot; font-weight:700;&quot;&gt;(r) &lt;/span&gt;2022 --&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>496</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAceptar">
+        <property name="text">
+         <string>Aceptar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnCancelar">
+        <property name="text">
+         <string>Cancelar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

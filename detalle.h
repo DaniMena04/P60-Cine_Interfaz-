@@ -21,8 +21,6 @@ public:
 
     int indice;
 
-
-
     ~Detalle();
 
     const QString &Hora() const;

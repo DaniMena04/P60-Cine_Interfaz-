@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include <QDebug>
+#include <QFile>
+#include <QDir>
+#include <QList>
 
 #include "principal.h"
 #include "asientos.h"
@@ -38,6 +41,8 @@ public:
 
 private:
     Ui::Boleto *ui;
+
+//    Asientos *m_asientos;
 
     QString Pelicula;
     QString Duracion;
