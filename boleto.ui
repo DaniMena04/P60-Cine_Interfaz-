@@ -217,14 +217,14 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="Aceptar">
         <property name="text">
          <string>PushButton</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="Cancelar">
         <property name="text">
          <string>PushButton</string>
         </property>
