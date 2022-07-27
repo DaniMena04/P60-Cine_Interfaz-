@@ -16,39 +16,48 @@ Principal::Principal(QWidget *parent)
     QString nombreArchivo = actual.absolutePath() + "/cartelera.csv";
     archivo.setFileName(nombreArchivo);
 
+    QString Pelicula, Duracion, Hora_1, Hora_2, Hora_3, Hora_4, Sala_1, Sala_2, Sala_3, Sala_4;
+
     if(archivo.open(QIODevice::ReadOnly | QIODevice::Text)){
         io.setDevice(&archivo);
-        int i=0;
         indice = 0;
         while(!io.atEnd()){
             QString linea =io.readLine();
             // qDebug() << linea;
             QStringList datos = linea.split(";");
-            Pelicula[i] = datos.at(0);
-            Duracion[i] = datos.at(1);
+            Pelicula = datos.at(0);
+            Duracion = datos.at(1);
 
-            Hora_1[i] = datos.at(2);
-            Hora_2[i] = datos.at(3);
-            Hora_3[i] = datos.at(4);
-            Hora_4[i] = datos.at(5);
+            Hora_1 = datos.at(2);
+            Hora_2 = datos.at(3);
+            Hora_3 = datos.at(4);
+            Hora_4 = datos.at(5);
 
-            Sala_1[i] = datos.at(6);
-            Sala_2[i] = datos.at(7);
-            Sala_3[i] = datos.at(8);
-            Sala_4[i] = datos.at(9);
+            Sala_1 = datos.at(6);
+            Sala_2 = datos.at(7);
+            Sala_3 = datos.at(8);
+            Sala_4 = datos.at(9);
 
-            i++;
+            m_cartelera.append(new Cartelera(Pelicula,Duracion,Hora_1,Hora_2,Hora_3,Hora_4,Sala_1,Sala_2,Sala_3,Sala_4));
         }
 
-        qDebug() << Pelicula[0];
+        qDebug() << Pelicula;
 
-        ui->textEdit->setText(Pelicula[0]);
-        ui->textEdit_2->setText(Pelicula[1]);
-        ui->textEdit_3->setText(Pelicula[2]);
-        ui->textEdit_4->setText(Pelicula[3]);
+        ui->textEdit->setText(m_cartelera.at(0)->getPelicula());
+        ui->textEdit_2->setText(m_cartelera.at(1)->getPelicula());
+        ui->textEdit_3->setText(m_cartelera.at(2)->getPelicula());
+        ui->textEdit_4->setText(m_cartelera.at(3)->getPelicula());
 
     }
 }
+
+//Principal::Principal(int indice1, int indice2, int indice3, int indice4)
+//{
+//    this->indice1 = indice1;
+//    this->indice2 = indice2;
+//    this->indice3 = indice3;
+//    this->indice4 = indice4;
+//}
 
 Principal::~Principal()
 {
@@ -66,33 +75,35 @@ void Principal::on_actionCartelera_triggered()
 
 void Principal::on_pushButton_clicked()
 {
-    indice = 1;
-    Detalle *d = new Detalle(this);
-    d->exec();
+    indice = 0;
+    Asientos *a = new Asientos(this);
+    a->exec();
+
 }
 
 
 void Principal::on_pushButton_2_clicked()
 {
-    indice = 2;
-    Detalle *d = new Detalle(this);
-    d->exec();
+    indice = 1;
+    Asientos *a = new Asientos(this);
+    a->exec();
 }
 
 
 void Principal::on_pushButton_3_clicked()
 {
-    indice = 3;
-    Detalle *d = new Detalle(this);
-    d->exec();
+    indice = 2;
+    Asientos *a = new Asientos(this);
+    a->exec();
+
 }
 
 
 void Principal::on_pushButton_4_clicked()
 {
-    indice = 4;
-    Detalle *d = new Detalle(this);
-    d->exec();
+    indice = 3;
+    Asientos *a = new Asientos(this);
+    a->exec();
 }
 
 
@@ -105,7 +116,9 @@ void Principal::on_actionSalir_triggered()
 
 void Principal::on_actionAcerca_de_triggered()
 {
-   Acerca_de *dialog = new Acerca_de(this);
-   dialog->exec();
+    Acerca_de *dialog = new Acerca_de(this);
+    dialog->exec();
 }
+
+
 

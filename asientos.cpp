@@ -6,14 +6,21 @@ Asientos::Asientos(QWidget *parent) :
     ui(new Ui::Asientos)
 {
     ui->setupUi(this);
-    i = 1;
-    Detalle *d;
 
-//    qDebug() << d->indice;
+    Principal *p;
 
-    m_limite = d->indice;
+    qDebug() << p->indice;
 
-//    qDebug() << m_limite;
+    ui->outPelicula->setText(p->m_cartelera.at(p->indice)->getPelicula());
+    ui->outDuracion->setText(p->m_cartelera.at(p->indice)->getDuracion());
+    ui->outHora_1->setText(p->m_cartelera.at(p->indice)->getHora1());
+    ui->outHora_2->setText(p->m_cartelera.at(p->indice)->getHora2());
+    ui->outHora_3->setText(p->m_cartelera.at(p->indice)->getHora3());
+    ui->outHora_4->setText(p->m_cartelera.at(p->indice)->getHora4());
+
+    setPelicula(ui->outPelicula->text());
+
+    i = 0;
 
 }
 
@@ -32,6 +39,7 @@ void Asientos::on_A1_stateChanged(int arg1)
     }else{
         ui->A1->setStyleSheet("image: url(:/Resources/Imagenes/1.png);");
     }
+
 }
 
 
@@ -229,9 +237,8 @@ void Asientos::on_D4_stateChanged(int arg1)
 
 void Asientos::validacion()
 {
-//    qDebug() << m_limite;
-//    qDebug() << i;
-    if( i == m_limite){
+    qDebug()<<indice;
+    if( i == indice-1){
 
         ui->A1->setEnabled(false);
         ui->A2->setEnabled(false);
@@ -253,20 +260,113 @@ void Asientos::validacion()
         ui->D3->setEnabled(false);
         ui->D4->setEnabled(false);
     }
-
     i++;
 
-}
-
-void Asientos::on_btnComprar_clicked()
-{
-    Boleto *boletin = new Boleto(this);
-    boletin->exec();
 }
 
 
 void Asientos::on_btnCancelar_clicked()
 {
+
     close();
+}
+
+void Asientos::on_outHora_1_stateChanged(int arg1)
+{
+    if(arg1 != 0){
+        ui->outHora_2->setEnabled(false);
+        ui->outHora_3->setEnabled(false);
+        ui->outHora_4->setEnabled(false);
+
+        setHora(ui->outHora_1->text());
+        qDebug() << Hora();
+
+    }else{
+        ui->outHora_2->setEnabled(true);
+        ui->outHora_3->setEnabled(true);
+        ui->outHora_4->setEnabled(true);
+    }
+}
+
+
+void Asientos::on_outHora_2_stateChanged(int arg1)
+{
+    if(arg1 != 0){
+        ui->outHora_1->setEnabled(false);
+        ui->outHora_3->setEnabled(false);
+        ui->outHora_4->setEnabled(false);
+
+        setHora(ui->outHora_2->text());
+        qDebug() << Hora();
+    }else{
+        ui->outHora_1->setEnabled(true);
+        ui->outHora_3->setEnabled(true);
+        ui->outHora_4->setEnabled(true);
+    }
+}
+
+
+void Asientos::on_outHora_3_stateChanged(int arg1)
+{
+    if(arg1 != 0){
+        ui->outHora_1->setEnabled(false);
+        ui->outHora_2->setEnabled(false);
+        ui->outHora_4->setEnabled(false);
+
+
+    }else{
+        ui->outHora_1->setEnabled(true);
+        ui->outHora_2->setEnabled(true);
+        ui->outHora_4->setEnabled(true);
+    }
+
+    setHora(ui->outHora_3->text());
+    qDebug() << Hora();
+}
+
+
+void Asientos::on_outHora_4_stateChanged(int arg1)
+{
+    if(arg1 != 0){
+        ui->outHora_1->setEnabled(false);
+        ui->outHora_2->setEnabled(false);
+        ui->outHora_3->setEnabled(false);
+
+
+    }else{
+        ui->outHora_1->setEnabled(true);
+        ui->outHora_2->setEnabled(true);
+        ui->outHora_3->setEnabled(true);
+    }
+
+    setHora(ui->outHora_4->text());
+}
+
+const QString &Asientos::Pelicula() const
+{
+    return m_Pelicula;
+}
+
+void Asientos::setPelicula(const QString &newPelicula)
+{
+    m_Pelicula = newPelicula;
+}
+
+const QString &Asientos::Hora() const
+{
+    return m_Hora;
+}
+
+void Asientos::setHora(const QString &newHora)
+{
+    m_Hora = newHora;
+}
+
+
+
+void Asientos::on_numAsi_valueChanged(int arg1)
+{
+    indice = arg1;
+    qDebug()<<indice;
 }
 

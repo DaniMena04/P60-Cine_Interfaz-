@@ -9,7 +9,6 @@
 
 #include "principal.h"
 #include "asientos.h"
-#include "detalle.h"
 
 namespace Ui {
 class Boleto;
@@ -42,7 +41,7 @@ public:
 private:
     Ui::Boleto *ui;
 
-//    Asientos *m_asientos;
+//    Asientos m_asientos;
 
     QString Pelicula;
     QString Duracion;

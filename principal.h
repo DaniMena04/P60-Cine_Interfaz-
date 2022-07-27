@@ -2,9 +2,10 @@
 #define PRINCIPAL_H
 
 #include <QMainWindow>
+#include <QList>
 #include <QDebug>
 
-#include "detalle.h"
+#include "asientos.h"
 #include "cartelera.h"
 #include "acerca_de.h"
 
@@ -18,22 +19,19 @@ class Principal : public QMainWindow
 
 public:
     Principal(QWidget *parent = nullptr);
+    Principal(int indice);
     ~Principal();
 
-    QString Pelicula[4];
-    QString Duracion[4];
-
-    QString Hora_1[4];
-    QString Hora_2[4];
-    QString Hora_3[4];
-    QString Hora_4[4];
-
-    QString Sala_1[4];
-    QString Sala_2[4];
-    QString Sala_3[4];
-    QString Sala_4[4];
-
+    QList <Cartelera*> m_cartelera;
     int indice;
+
+    int getIndice1() const;
+
+    int getIndice2() const;
+
+    int getIndice3() const;
+
+    int getIndice4() const;
 
 private slots:
     void on_actionCartelera_triggered();

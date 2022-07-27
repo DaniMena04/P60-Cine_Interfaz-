@@ -60,16 +60,16 @@ void Boleto::asientos()
 
     Asientos *asientos;
 
-    ui->outAsientos->setColumnCount(asientos->m_limite);
+    ui->outAsientos->setColumnCount(asientos->indice);
 
-    while(i<asientos->m_limite){
+    while(i<asientos->indice){
         ui->outAsientos->setColumnWidth(i,20);
         i++;
     }
 
     ui->outAsientos->insertRow(fila);
-    while(i<asientos->m_limite){
-        ui->outAsientos->setItem(fila,i,new QTableWidgetItem(asientos->m_asientosEscojidos[asientos->m_limite]));
+    while(i<asientos->indice){
+        ui->outAsientos->setItem(fila,i,new QTableWidgetItem(asientos->m_asientosEscojidos[asientos->indice]));
         i++;
     }
 }
@@ -112,6 +112,8 @@ void Boleto::setDuracion(const QString &newDuracion)
 const QString &Boleto::getPelicula() const
 {
     return Pelicula;
+
+//    m_asientos->getdatos();
 }
 
 void Boleto::setPelicula(const QString &newPelicula)

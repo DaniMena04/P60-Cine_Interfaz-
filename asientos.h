@@ -4,8 +4,8 @@
 #include <QDialog>
 #include <QDebug>
 
-#include "detalle.h"
-
+#include  "principal.h"
+#include "boleto.h"
 
 namespace Ui {
 class Asientos;
@@ -17,11 +17,17 @@ class Asientos : public QDialog
 
 public:
     explicit Asientos(QWidget *parent = nullptr);
+    int indice;
 
     ~Asientos();
 
     QString m_asientosEscojidos[16];
-    int m_limite;
+
+    const QString &Hora() const;
+    void setHora(const QString &newHora);
+
+    const QString &Pelicula() const;
+    void setPelicula(const QString &newPelicula);
 
 private slots:
 
@@ -59,12 +65,23 @@ private slots:
 
     void validacion();
 
-    void on_btnComprar_clicked();
-
     void on_btnCancelar_clicked();
+
+    void on_outHora_1_stateChanged(int arg1);
+
+    void on_outHora_2_stateChanged(int arg1);
+
+    void on_outHora_3_stateChanged(int arg1);
+
+    void on_outHora_4_stateChanged(int arg1);
+
+    void on_numAsi_valueChanged(int arg1);
 
 private:
     Ui::Asientos *ui;
+
+    QString m_Hora;
+    QString m_Pelicula;
     int i;
 };
 

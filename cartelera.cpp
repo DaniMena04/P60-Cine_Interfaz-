@@ -72,7 +72,7 @@ QString Cartelera::getPelicula()
 
 QString Cartelera::getDuracion()
 {
-    return this->m_pelicula;
+    return this->m_duracion;
 }
 
 QString Cartelera::getHora1()
