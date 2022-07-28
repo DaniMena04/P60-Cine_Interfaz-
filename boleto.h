@@ -9,7 +9,6 @@
 #include <QDir>
 #include <QList>
 
-#include "principal.h"
 #include "asientos.h"
 
 namespace Ui {
@@ -21,7 +20,7 @@ class Boleto : public QDialog
     Q_OBJECT
 
 public:
-    explicit Boleto(QWidget *parent = nullptr);
+    explicit Boleto(QString m_Pelicula, QString m_Hora, QString asi, QString m_Sala, int valor, QWidget *parent = nullptr);
     ~Boleto();
 
     void asientos(int m_limite);
@@ -34,11 +33,10 @@ private slots:
 
 private:
     Ui::Boleto *ui;
-    QString Pelicula;
-    QString Duracion;
-    QString Hora;
-    QString Sala;
-    QString Asiento;
+    QString m_Pelicula;
+    QString m_Hora;
+    QString m_Sala;
+    QString m_Asiento;
     QString Fecha;
     int m_limite;
     int indice;

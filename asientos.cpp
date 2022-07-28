@@ -1,23 +1,30 @@
 #include "asientos.h"
 #include "ui_asientos.h"
 
-Asientos::Asientos(QWidget *parent) :
+Asientos::Asientos(int indice, QList<Cartelera*> m_cartelera, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Asientos)
 {
     ui->setupUi(this);
 
-    Principal *p;
 
-    ui->outPelicula->setText(p->m_cartelera.at(p->indice)->getPelicula());
-    ui->outDuracion->setText(p->m_cartelera.at(p->indice)->getDuracion());
-    ui->outHora_1->setText(p->m_cartelera.at(p->indice)->getHora1());
-    ui->outHora_2->setText(p->m_cartelera.at(p->indice)->getHora2());
-    ui->outHora_3->setText(p->m_cartelera.at(p->indice)->getHora3());
-    ui->outHora_4->setText(p->m_cartelera.at(p->indice)->getHora4());
+    limite = indice;
+    m_Pelicula = m_cartelera.at(limite)->getPelicula();
+    m_Duracion = m_cartelera.at(limite)->getDuracion();
+    m_Hora1 = m_cartelera.at(limite)->getHora1();
+    m_Hora2 = m_cartelera.at(limite)->getHora2();
+    m_Hora3 = m_cartelera.at(limite)->getHora3();
+    m_Hora4 = m_cartelera.at(limite)->getHora4();
 
-    m_Pelicula = p->m_cartelera.at(p->indice)->getPelicula();
-    m_Sala = p->m_cartelera.at(p->indice)->getSala1();
+    ui->outPelicula->setText(m_Pelicula);
+    ui->outDuracion->setText(m_Duracion);
+    ui->outHora_1->setText(m_Hora1);
+    ui->outHora_2->setText(m_Hora2);
+    ui->outHora_3->setText(m_Hora3);
+    ui->outHora_4->setText(m_Hora4);
+
+
+    m_Sala = m_cartelera.at(limite)->getSala1();
 
     indice = 0;
     indice2 = 0;
@@ -370,7 +377,7 @@ void Asientos::on_numAsiNin_valueChanged(int arg1)
 void Asientos::on_btnComprar_clicked()
 {
     valor=(indice*5)+(indice2*3);
-    Boleto *b = new Boleto(this);
+    Boleto *b = new Boleto(m_Pelicula,m_Hora,asi,m_Sala,valor);
     b->exec();
 }
 

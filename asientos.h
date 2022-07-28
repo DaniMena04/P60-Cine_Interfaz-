@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QDebug>
 
-#include  "principal.h"
+#include "cartelera.h"
 #include "boleto.h"
 
 namespace Ui {
@@ -16,22 +16,15 @@ class Asientos : public QDialog
     Q_OBJECT
 
 public:
-    explicit Asientos(QWidget *parent = nullptr);
-    int indice;
-    int indice2;
-    int numAsi;
-    int valor;
+    explicit Asientos(int indice, QList<Cartelera*> m_cartelera, QWidget *parent = nullptr);
+
+
 //    void bloquear();
 //    void activar();
 
     ~Asientos();
 
-    QString m_asientosEscojidos[16];
 
-    QString m_Hora;
-    QString m_Pelicula;
-    QString m_Sala;
-    QString asi;
 
 private slots:
 
@@ -88,6 +81,24 @@ private slots:
 
 private:
     Ui::Asientos *ui;
+
+    int limite;
+    int indice;
+    int indice2;
+    int numAsi;
+    int valor;
+
+    QString m_asientosEscojidos[16];
+
+    QString m_Hora1;
+    QString m_Hora2;
+    QString m_Hora3;
+    QString m_Hora4;
+    QString m_Hora;
+    QString m_Duracion;
+    QString m_Pelicula;
+    QString m_Sala;
+    QString asi;
 
 
     int i;

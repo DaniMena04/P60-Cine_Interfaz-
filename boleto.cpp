@@ -1,23 +1,22 @@
 #include "boleto.h"
 #include "ui_boleto.h"
 
-Boleto::Boleto(QWidget *parent) :
+Boleto::Boleto(QString m_Pelicula, QString m_Hora, QString asi, QString m_Sala, int valor, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Boleto)
 {
     ui->setupUi(this);
-    Asientos *a;
 
     Fecha = QDate::currentDate().toString("dd/MM/yyyy");
 
-//    Fecha
 
-    ui->outPelicula->setText(a->m_Pelicula);
-    ui->outHora->setText(a->m_Hora);
-    ui->outSala->setText(a->m_Sala);
-    ui->outAsientos->setText(a->asi);
+    ui->outPelicula->setText(m_Pelicula);
+    ui->outHora->setText(m_Hora);
+    ui->outSala->setText(m_Sala);
+    ui->outAsientos->setText(asi);
     ui->outFecha->setText(Fecha);
-    ui->outTotal->setText(QString::number(a->valor)+"$");
+    ui->outTotal->setText(QString::number(valor) + "$");
+
 
 }
 

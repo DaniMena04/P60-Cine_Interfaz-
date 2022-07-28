@@ -24,7 +24,7 @@ public:
     Principal(int indice);
     ~Principal();
 
-    QList <Cartelera*> m_cartelera;
+
     int indice;
 
     int getIndice1() const;
@@ -54,5 +54,6 @@ private slots:
 
 private:
     Ui::Principal *ui;
+    QList <Cartelera*> m_cartelera;
 };
 #endif // PRINCIPAL_H
