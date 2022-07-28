@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 #include "producto.h"
-#include "factura.h"
+//#include "factura.h"
 #include <string.h>
 
 #define IVA 12

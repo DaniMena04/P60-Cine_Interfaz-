@@ -22,6 +22,7 @@ SOURCES += \
     cartelera.cpp \
     codigo.cpp \
     edcartelera.cpp \
+    factura.cpp \
     main.cpp \
     principal.cpp \
     producto.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     cartelera.h \
     codigo.h \
     edcartelera.h \
+    factura.h \
     principal.h \
     producto.h \
     snacks.h \
@@ -45,6 +47,7 @@ FORMS += \
     asientos.ui \
     boleto.ui \
     edcartelera.ui \
+    factura.ui \
     principal.ui \
     snacks.ui \
     usuario.ui

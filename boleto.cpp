@@ -8,7 +8,7 @@ Boleto::Boleto(QWidget *parent) :
     ui->setupUi(this);
     Asientos *a;
 
-    Fecha=QDate::currentDate().toString("dd/MM/yyyy");
+    Fecha = QDate::currentDate().toString("dd/MM/yyyy");
 
 //    Fecha
 

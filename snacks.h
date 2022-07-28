@@ -3,7 +3,9 @@
 
 #include <QDialog>
 #include <string.h>
+#include <QMessageBox>
 
+#include "factura.h"
 #include "producto.h"
 
 #define IVA 12
@@ -25,7 +27,10 @@ private slots:
 
     void on_btnAgregar_released();
 
-    void on_pushButton_released();
+
+    void on_btnOk_clicked();
+
+    void on_btnCancelar_clicked();
 
 private:
     Ui::snacks *ui;
@@ -37,6 +42,7 @@ private:
     void calcular(float stProducto);
 
     QString obtenerDatos();
+    void limpiar();
     void producto();
     bool eliminarRepetidos(Producto *producto, int cantidad);
 

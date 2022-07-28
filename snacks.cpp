@@ -44,6 +44,34 @@ void snacks::calcular(float stProducto)
     ui->outTotal->setText("$ " + QString::number(m_total, 'f', 2));
 }
 
+QString snacks::obtenerDatos()
+{
+    return "Nombre: " + ui->inCliente->displayText() + "\n";
+
+}
+
+void snacks::limpiar()
+{
+    ui->inCliente->setText("");
+    ui->inCantidad->setValue(0);
+
+    //Inicializar iva - subtotal - total
+    m_subtotal=0;
+    m_iva=0;
+    m_total=0;
+
+    ui->outSubtotal->setText("0.0");
+    ui->outIva->setText("0.0");
+    ui->outTotal->setText("0.0");
+
+    //Eliminar filas de la tabla
+    ui->outDetalle->removeRow(0);
+    ui->outDetalle->removeRow(0);
+    ui->outDetalle->removeRow(0);
+    ui->outDetalle->removeRow(0);
+
+}
+
 
 void snacks::on_inProducto_currentIndexChanged(int index)
 {
@@ -140,8 +168,38 @@ bool snacks::eliminarRepetidos(Producto *producto, int cantidad)
     return false;
 }
 
-
-
-void snacks::on_pushButton_released()
+void snacks::on_btnOk_clicked()
 {
+    Factura *fac = new Factura();
+
+    QStringList lista;
+    QString productos;
+
+    for( int fila = 0; fila < ui->outDetalle->rowCount(); ++fila)    {
+        for( int columna = 0; columna < ui->outDetalle->columnCount(); ++columna){
+            lista << ui->outDetalle->item(fila, columna)->text();
+            QTableWidgetItem* item = ui->outDetalle->item(fila,columna);
+            if (!item || item->text().isEmpty()){
+                ui->outDetalle->setItem(fila,columna,new QTableWidgetItem("0"));
+            }
+            productos = lista.join("      ");
+            lista<<"";
+        }
+        lista<<"\n";
+        fac->compra(productos);
+    }
+
+    fac->registroDatos(obtenerDatos());
+    fac->Subtotal(ui->outSubtotal->text());
+    fac->Iva(ui->outIva->text());
+    fac->Total(ui->outTotal->text());
+    fac->exec();
+    limpiar();
 }
+
+
+void snacks::on_btnCancelar_clicked()
+{
+    close();
+}
+
