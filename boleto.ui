@@ -149,13 +149,6 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="outFecha">
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_10">
         <property name="font">
@@ -191,11 +184,10 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QTableWidget" name="outAsientos">
-        <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked</set>
-        </property>
-       </widget>
+       <widget class="QLineEdit" name="outAsientos"/>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="outFecha"/>
       </item>
      </layout>
     </widget>
@@ -217,16 +209,16 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="Aceptar">
+       <widget class="QPushButton" name="btnAceptar">
         <property name="text">
-         <string>PushButton</string>
+         <string>Estadistica</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="Cancelar">
+       <widget class="QPushButton" name="btnCancelar">
         <property name="text">
-         <string>PushButton</string>
+         <string>Cancelar</string>
         </property>
        </widget>
       </item>

@@ -76,7 +76,7 @@ void Principal::on_actionCartelera_triggered()
 void Principal::on_pushButton_clicked()
 {
     indice = 0;
-    Asientos *a = new Asientos(this);
+    Asientos *a = new Asientos();
     a->exec();
 
 }
@@ -85,7 +85,7 @@ void Principal::on_pushButton_clicked()
 void Principal::on_pushButton_2_clicked()
 {
     indice = 1;
-    Asientos *a = new Asientos(this);
+    Asientos *a = new Asientos();
     a->exec();
 }
 
@@ -93,7 +93,7 @@ void Principal::on_pushButton_2_clicked()
 void Principal::on_pushButton_3_clicked()
 {
     indice = 2;
-    Asientos *a = new Asientos(this);
+    Asientos *a = new Asientos();
     a->exec();
 
 }
@@ -102,7 +102,7 @@ void Principal::on_pushButton_3_clicked()
 void Principal::on_pushButton_4_clicked()
 {
     indice = 3;
-    Asientos *a = new Asientos(this);
+    Asientos *a = new Asientos();
     a->exec();
 }
 

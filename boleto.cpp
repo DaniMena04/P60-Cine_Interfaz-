@@ -6,45 +6,20 @@ Boleto::Boleto(QWidget *parent) :
     ui(new Ui::Boleto)
 {
     ui->setupUi(this);
+    Asientos *a;
 
-//    QFile archivo;
-//    QTextStream io;
+    qDebug() << QDate::currentDate();
 
-//    QDir actual = QDir::current();
-//    QString nombreArchivo = actual.absolutePath() + "/cartelera.csv";
-//    archivo.setFileName(nombreArchivo);
+//    Fecha
 
-//    if(archivo.open(QIODevice::ReadOnly | QIODevice::Text)){
-//        io.setDevice(&archivo);
-//        int i=0;
-//        indice = 0;
-//        while(!io.atEnd()){
-//            QString linea =io.readLine();
-//            // qDebug() << linea;
-//            QStringList datos = linea.split(";");
-//            Pelicula[i] = datos.at(0);
-//            Duracion[i] = datos.at(1);
+    ui->outPelicula->setText(a->m_Pelicula);
+    ui->outHora->setText(a->m_Hora);
+    ui->outSala->setText(a->m_Sala);
+    ui->outFecha->setText("28 / 7 / 2022");
+//    ui->outFecha->setStyle(QDate::currentDate());
+//    ui->outFecha->setText(Fecha);
 
-//            Hora_1[i] = datos.at(2);
-//            Hora_2[i] = datos.at(3);
-//            Hora_3[i] = datos.at(4);
-//            Hora_4[i] = datos.at(5);
-
-//            Sala_1[i] = datos.at(6);
-//            Sala_2[i] = datos.at(7);
-//            Sala_3[i] = datos.at(8);
-//            Sala_4[i] = datos.at(9);
-
-//            i++;
-//        }
-
-//    //   Detalle *d;
-//    Principal *p;
-//    qDebug() << p->Pelicula[0];
-//    //   qDebug() << d->Hora();
-
-//    ui->outPelicula->setText(p->Pelicula[0]);
-//    ui->outHora->setText("d->Hora()");
+//    asientos(a->m_limite);
 
 }
 
@@ -53,70 +28,23 @@ Boleto::~Boleto()
     delete ui;
 }
 
-void Boleto::asientos()
+//void Boleto::asientos(int m_limite)
+//{
+//    int i;
+//    Asientos *a;
+//    for(i = 0; i<m_limite; i++){
+//        ui->outAsientos->setText(a->m_asientosEscojidos.at(i));
+//    }
+//}
+
+void Boleto::on_btnAceptar_clicked()
 {
-    int fila = 1;
-    int i = 0;
-
-    Asientos *asientos;
-
-    ui->outAsientos->setColumnCount(asientos->indice);
-
-    while(i<asientos->indice){
-        ui->outAsientos->setColumnWidth(i,20);
-        i++;
-    }
-
-    ui->outAsientos->insertRow(fila);
-    while(i<asientos->indice){
-        ui->outAsientos->setItem(fila,i,new QTableWidgetItem(asientos->m_asientosEscojidos[asientos->indice]));
-        i++;
-    }
+    close();
 }
 
-const QString &Boleto::getAsiento() const
+
+void Boleto::on_btnCancelar_clicked()
 {
-    return Asiento;
+    close();
 }
 
-const QString &Boleto::getSala() const
-{
-    return Sala;
-}
-
-void Boleto::setSala(const QString &newSala)
-{
-    Sala = newSala;
-}
-
-const QString &Boleto::getHora() const
-{
-    return Hora;
-}
-
-void Boleto::setHora(const QString &newHora)
-{
-    Hora = newHora;
-}
-
-const QString &Boleto::getDuracion() const
-{
-    return Duracion;
-}
-
-void Boleto::setDuracion(const QString &newDuracion)
-{
-    Duracion = newDuracion;
-}
-
-const QString &Boleto::getPelicula() const
-{
-    return Pelicula;
-
-//    m_asientos->getdatos();
-}
-
-void Boleto::setPelicula(const QString &newPelicula)
-{
-    Pelicula = newPelicula;
-}

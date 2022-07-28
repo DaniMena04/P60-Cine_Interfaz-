@@ -1,7 +1,16 @@
 #include "cartelera.h"
 
 
-Cartelera::Cartelera(QString m_pelicula, QString m_duracion, QString m_hora1, QString m_hora2, QString m_hora3, QString m_hora4, QString m_sala1, QString m_sala2, QString m_sala3, QString m_sala4)
+Cartelera::Cartelera(QString m_pelicula,
+                     QString m_duracion,
+                     QString m_hora1,
+                     QString m_hora2,
+                     QString m_hora3,
+                     QString m_hora4,
+                     QString m_sala1,
+                     QString m_sala2,
+                     QString m_sala3,
+                     QString m_sala4)
 {
     this->m_pelicula = m_pelicula;
     this->m_duracion = m_duracion;

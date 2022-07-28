@@ -63,9 +63,9 @@ edCartelera::edCartelera(QWidget *parent) :
             ui->outCarteleras->setItem(fila,4,new QTableWidgetItem(Hora3));
             ui->outCarteleras->setItem(fila,5,new QTableWidgetItem(Hora4));
             ui->outCarteleras->setItem(fila,6,new QTableWidgetItem(Sala1));
-            ui->outCarteleras->setItem(fila,7,new QTableWidgetItem(Sala2));
-            ui->outCarteleras->setItem(fila,8,new QTableWidgetItem(Sala3));
-            ui->outCarteleras->setItem(fila,9,new QTableWidgetItem(Sala4));
+//            ui->outCarteleras->setItem(fila,7,new QTableWidgetItem(Sala2));
+//            ui->outCarteleras->setItem(fila,8,new QTableWidgetItem(Sala3));
+//            ui->outCarteleras->setItem(fila,9,new QTableWidgetItem(Sala4));
         }
 
         // qDebug() << m_cartelera;

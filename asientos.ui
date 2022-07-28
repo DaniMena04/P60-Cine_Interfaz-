@@ -89,7 +89,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox"/>
+          <widget class="QSpinBox" name="numAsi"/>
          </item>
          <item>
           <spacer name="horizontalSpacer_6">

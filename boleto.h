@@ -2,6 +2,7 @@
 #define BOLETO_H
 
 #include <QDialog>
+#include <QDateTime>
 #include <QDebug>
 #include <QFile>
 #include <QDir>
@@ -22,33 +23,22 @@ public:
     explicit Boleto(QWidget *parent = nullptr);
     ~Boleto();
 
-    void asientos();
+    void asientos(int m_limite);
 
-    const QString &getPelicula() const;
-    void setPelicula(const QString &newPelicula);
+private slots:
+    void on_btnAceptar_clicked();
 
-    const QString &getDuracion() const;
-    void setDuracion(const QString &newDuracion);
-
-    const QString &getHora() const;
-    void setHora(const QString &newHora);
-
-    const QString &getSala() const;
-    void setSala(const QString &newSala);
-
-    const QString &getAsiento() const;
+    void on_btnCancelar_clicked();
 
 private:
     Ui::Boleto *ui;
-
-//    Asientos m_asientos;
-
     QString Pelicula;
     QString Duracion;
     QString Hora;
     QString Sala;
     QString Asiento;
-
+    QString Fecha;
+    int m_limite;
     int indice;
 
 

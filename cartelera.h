@@ -7,7 +7,16 @@ class Cartelera
 {
 public:
 
-    Cartelera(QString m_pelicula, QString m_duracion, QString m_hora1, QString m_hora2, QString m_hora3, QString m_hora4, QString m_sala1, QString m_sala2, QString m_sala3, QString m_sala4);
+    Cartelera(QString m_pelicula,
+              QString m_duracion,
+              QString m_hora1,
+              QString m_hora2,
+              QString m_hora3,
+              QString m_hora4,
+              QString m_sala1,
+              QString m_sala2,
+              QString m_sala3,
+              QString m_sala4);
 
     void setPelicula(QString m_pelicula);
     void setDuracion(QString m_duracion);

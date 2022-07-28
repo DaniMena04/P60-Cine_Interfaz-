@@ -18,16 +18,13 @@ class Asientos : public QDialog
 public:
     explicit Asientos(QWidget *parent = nullptr);
     int indice;
+    int m_limite;
+    QString m_Hora;
+    QString m_Pelicula;
+    QString m_Sala;
+    QList <QString> m_asientosEscojidos;
 
     ~Asientos();
-
-    QString m_asientosEscojidos[16];
-
-    const QString &Hora() const;
-    void setHora(const QString &newHora);
-
-    const QString &Pelicula() const;
-    void setPelicula(const QString &newPelicula);
 
 private slots:
 
@@ -77,11 +74,10 @@ private slots:
 
     void on_numAsi_valueChanged(int arg1);
 
+    void on_btnComprar_clicked();
+
 private:
     Ui::Asientos *ui;
-
-    QString m_Hora;
-    QString m_Pelicula;
     int i;
 };
 
