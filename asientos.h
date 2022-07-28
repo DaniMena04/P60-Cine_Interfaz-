@@ -18,13 +18,20 @@ class Asientos : public QDialog
 public:
     explicit Asientos(QWidget *parent = nullptr);
     int indice;
-    int m_limite;
+    int indice2;
+    int numAsi;
+    int valor;
+    void bloquear();
+    void activar();
+
+    ~Asientos();
+
+    QString m_asientosEscojidos[16];
+
     QString m_Hora;
     QString m_Pelicula;
     QString m_Sala;
-    QList <QString> m_asientosEscojidos;
-
-    ~Asientos();
+    QString asi;
 
 private slots:
 
@@ -72,12 +79,17 @@ private slots:
 
     void on_outHora_4_stateChanged(int arg1);
 
-    void on_numAsi_valueChanged(int arg1);
+    void on_numAsiAdu_valueChanged(int arg1);
+
+    void on_numAsiNin_valueChanged(int arg1);
+
 
     void on_btnComprar_clicked();
 
 private:
     Ui::Asientos *ui;
+
+
     int i;
 };
 

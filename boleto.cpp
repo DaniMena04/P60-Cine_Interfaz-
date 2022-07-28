@@ -15,11 +15,9 @@ Boleto::Boleto(QWidget *parent) :
     ui->outPelicula->setText(a->m_Pelicula);
     ui->outHora->setText(a->m_Hora);
     ui->outSala->setText(a->m_Sala);
+    ui->outAsientos->setText(a->asi);
     ui->outFecha->setText("28 / 7 / 2022");
-//    ui->outFecha->setStyle(QDate::currentDate());
-//    ui->outFecha->setText(Fecha);
-
-//    asientos(a->m_limite);
+    ui->outTotal->setText(QString::number(a->valor)+"$");
 
 }
 
@@ -27,15 +25,6 @@ Boleto::~Boleto()
 {
     delete ui;
 }
-
-//void Boleto::asientos(int m_limite)
-//{
-//    int i;
-//    Asientos *a;
-//    for(i = 0; i<m_limite; i++){
-//        ui->outAsientos->setText(a->m_asientosEscojidos.at(i));
-//    }
-//}
 
 void Boleto::on_btnAceptar_clicked()
 {
