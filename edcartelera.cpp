@@ -50,8 +50,6 @@ edCartelera::edCartelera(QWidget *parent) :
             Hora4 = datos.at(5);
             Sala1 = datos.at(6);
 
-            // qDebug() << Pelicula;
-
             m_cartelera.append(new Cartelera(Pelicula, Duracion, Hora1, Hora2, Hora3, Hora4, Sala1, Sala2, Sala3, Sala4));
 
             int fila = ui->outCarteleras->rowCount();
@@ -63,14 +61,10 @@ edCartelera::edCartelera(QWidget *parent) :
             ui->outCarteleras->setItem(fila,4,new QTableWidgetItem(Hora3));
             ui->outCarteleras->setItem(fila,5,new QTableWidgetItem(Hora4));
             ui->outCarteleras->setItem(fila,6,new QTableWidgetItem(Sala1));
-//            ui->outCarteleras->setItem(fila,7,new QTableWidgetItem(Sala2));
-//            ui->outCarteleras->setItem(fila,8,new QTableWidgetItem(Sala3));
-//            ui->outCarteleras->setItem(fila,9,new QTableWidgetItem(Sala4));
         }
 
-        // qDebug() << m_cartelera;
-
         archivo.close();
+
     }else{
         QMessageBox::critical(this,"Error","La cartelera no se pudo cargar");
     }

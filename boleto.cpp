@@ -8,7 +8,7 @@ Boleto::Boleto(QWidget *parent) :
     ui->setupUi(this);
     Asientos *a;
 
-    qDebug() << QDate::currentDate();
+    Fecha=QDate::currentDate().toString("dd/MM/yyyy");
 
 //    Fecha
 
@@ -16,7 +16,7 @@ Boleto::Boleto(QWidget *parent) :
     ui->outHora->setText(a->m_Hora);
     ui->outSala->setText(a->m_Sala);
     ui->outAsientos->setText(a->asi);
-    ui->outFecha->setText("28 / 7 / 2022");
+    ui->outFecha->setText(Fecha);
     ui->outTotal->setText(QString::number(a->valor)+"$");
 
 }

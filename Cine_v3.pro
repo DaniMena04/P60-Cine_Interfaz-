@@ -24,6 +24,8 @@ SOURCES += \
     edcartelera.cpp \
     main.cpp \
     principal.cpp \
+    producto.cpp \
+    snacks.cpp \
     usuario.cpp
 
 HEADERS += \
@@ -34,6 +36,8 @@ HEADERS += \
     codigo.h \
     edcartelera.h \
     principal.h \
+    producto.h \
+    snacks.h \
     usuario.h
 
 FORMS += \
@@ -42,6 +46,7 @@ FORMS += \
     boleto.ui \
     edcartelera.ui \
     principal.ui \
+    snacks.ui \
     usuario.ui
 
 # Default rules for deployment.

@@ -4,5 +4,8 @@
         <file>Resources/Imagenes/e852ab9aec2cb234ca26f3161edfa5be.png</file>
         <file>Resources/Imagenes/silla(1).png</file>
         <file>Resources/Imagenes/cine.png</file>
+        <file>Resources/Imagenes/Combo1.png</file>
+        <file>Resources/Imagenes/Combo2.png</file>
+        <file>Resources/Imagenes/Combo3.png</file>
     </qresource>
 </RCC>

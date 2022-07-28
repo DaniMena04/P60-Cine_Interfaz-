@@ -249,6 +249,7 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="separator"/>
     <addaction name="actionSalir"/>
+    <addaction name="actionTienda"/>
    </widget>
    <widget class="QMenu" name="menuEditor">
     <property name="title">
@@ -280,6 +281,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionSalir">
    <property name="text">
     <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionTienda">
+   <property name="text">
+    <string>Tienda</string>
    </property>
   </action>
  </widget>

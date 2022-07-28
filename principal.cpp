@@ -122,3 +122,10 @@ void Principal::on_actionAcerca_de_triggered()
 
 
 
+
+void Principal::on_actionTienda_triggered()
+{
+    snacks *n = new snacks(this);
+    n->exec();
+}
+

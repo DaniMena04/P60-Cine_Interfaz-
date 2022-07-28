@@ -8,6 +8,8 @@
 #include "asientos.h"
 #include "cartelera.h"
 #include "acerca_de.h"
+#include "tienda.h"
+#include "snacks.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Principal; }
@@ -47,6 +49,8 @@ private slots:
     void on_actionSalir_triggered();
 
     void on_actionAcerca_de_triggered();
+
+    void on_actionTienda_triggered();
 
 private:
     Ui::Principal *ui;
