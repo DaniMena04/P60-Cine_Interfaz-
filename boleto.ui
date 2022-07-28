@@ -209,9 +209,9 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="btnAceptar">
+       <widget class="QPushButton" name="btnGuardar">
         <property name="text">
-         <string>Estadistica</string>
+         <string>Guardar</string>
         </property>
        </widget>
       </item>

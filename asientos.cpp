@@ -24,51 +24,57 @@ Asientos::Asientos(QWidget *parent) :
 
 }
 
-void Asientos::bloquear()
-{
-    ui->A1->setEnabled(false);
-    ui->A2->setEnabled(false);
-    ui->A3->setEnabled(false);
-    ui->A4->setEnabled(false);
+//void Asientos::bloquear()
+//{
+//    if(indice == 0 && indice2 == 0){
+//        ui->A1->setEnabled(false);
+//        ui->A2->setEnabled(false);
+//        ui->A3->setEnabled(false);
+//        ui->A4->setEnabled(false);
 
-    ui->B1->setEnabled(false);
-    ui->B2->setEnabled(false);
-    ui->B3->setEnabled(false);
-    ui->B4->setEnabled(false);
+//        ui->B1->setEnabled(false);
+//        ui->B2->setEnabled(false);
+//        ui->B3->setEnabled(false);
+//        ui->B4->setEnabled(false);
 
-    ui->C1->setEnabled(false);
-    ui->C2->setEnabled(false);
-    ui->C3->setEnabled(false);
-    ui->C4->setEnabled(false);
+//        ui->C1->setEnabled(false);
+//        ui->C2->setEnabled(false);
+//        ui->C3->setEnabled(false);
+//        ui->C4->setEnabled(false);
 
-    ui->D1->setEnabled(false);
-    ui->D2->setEnabled(false);
-    ui->D3->setEnabled(false);
-    ui->D4->setEnabled(false);
-}
+//        ui->D1->setEnabled(false);
+//        ui->D2->setEnabled(false);
+//        ui->D3->setEnabled(false);
+//        ui->D4->setEnabled(false);
+//    }
 
-void Asientos::activar()
-{
-    ui->A1->setEnabled(true);
-    ui->A2->setEnabled(true);
-    ui->A3->setEnabled(true);
-    ui->A4->setEnabled(true);
+//}
 
-    ui->B1->setEnabled(true);
-    ui->B2->setEnabled(true);
-    ui->B3->setEnabled(true);
-    ui->B4->setEnabled(true);
+//void Asientos::activar()
+//{
+//    if(indice != 0 && indice2 != 0){
+//        ui->A1->setEnabled(true);
+//        ui->A2->setEnabled(true);
+//        ui->A3->setEnabled(true);
+//        ui->A4->setEnabled(true);
 
-    ui->C1->setEnabled(true);
-    ui->C2->setEnabled(true);
-    ui->C3->setEnabled(true);
-    ui->C4->setEnabled(true);
+//        ui->B1->setEnabled(true);
+//        ui->B2->setEnabled(true);
+//        ui->B3->setEnabled(true);
+//        ui->B4->setEnabled(true);
 
-    ui->D1->setEnabled(true);
-    ui->D2->setEnabled(true);
-    ui->D3->setEnabled(true);
-    ui->D4->setEnabled(true);
-}
+//        ui->C1->setEnabled(true);
+//        ui->C2->setEnabled(true);
+//        ui->C3->setEnabled(true);
+//        ui->C4->setEnabled(true);
+
+//        ui->D1->setEnabled(true);
+//        ui->D2->setEnabled(true);
+//        ui->D3->setEnabled(true);
+//        ui->D4->setEnabled(true);
+//    }
+
+//}
 
 Asientos::~Asientos()
 {

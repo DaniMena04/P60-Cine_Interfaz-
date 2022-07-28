@@ -26,14 +26,43 @@ Boleto::~Boleto()
     delete ui;
 }
 
-void Boleto::on_btnAceptar_clicked()
+void Boleto::on_btnCancelar_clicked()
 {
     close();
 }
 
 
-void Boleto::on_btnCancelar_clicked()
+void Boleto::on_btnGuardar_clicked()
 {
-    close();
+    QTextStream io;
+    QDir actual = QDir::current();
+    QString nombreArchivo = actual.absolutePath() + "/factura.csv";
+
+    QString m_pelicula, m_hora, m_asientos, m_fecha, m_total, m_sala;
+    QFile archivo;
+
+    archivo.setFileName(nombreArchivo);
+    archivo.open(QFile::WriteOnly | QFile::Truncate);
+
+    if(!archivo.isOpen()){
+        QMessageBox::critical(this,"Aviso","No se pudo abrir el documento de carteleras");
+        return;
+    };
+
+    io.setDevice(&archivo);
+
+    m_pelicula = ui->outPelicula->text() + ";";
+    m_hora = ui->outHora->text() + ";";
+    m_fecha = ui->outFecha->text() + ";";
+    m_asientos = ui->outAsientos->text() + ";";
+    m_sala = ui->outSala->text() + ";";
+    m_total = ui->outTotal->text() + ";";
+
+    io << m_pelicula << m_hora << m_fecha << m_asientos << m_sala << m_total;
+
+
+    QMessageBox::information(this,"Aviso","Archivo guardado");
+    archivo.flush();
+    archivo.close();
 }
 

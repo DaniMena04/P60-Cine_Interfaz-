@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QDateTime>
+#include <QMessageBox>
 #include <QDebug>
 #include <QFile>
 #include <QDir>
@@ -26,9 +27,10 @@ public:
     void asientos(int m_limite);
 
 private slots:
-    void on_btnAceptar_clicked();
 
     void on_btnCancelar_clicked();
+
+    void on_btnGuardar_clicked();
 
 private:
     Ui::Boleto *ui;

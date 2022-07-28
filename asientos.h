@@ -21,8 +21,8 @@ public:
     int indice2;
     int numAsi;
     int valor;
-    void bloquear();
-    void activar();
+//    void bloquear();
+//    void activar();
 
     ~Asientos();
 
